@@ -26,4 +26,7 @@ GymPass style app.
 
 ## NR (Nonfunctional Requirements)
 
--
+- [ ] The user password must be cryptographic
+- [ ] The date must be persisted in a PostgreSQL database
+- [ ] All the list must be paginated by 20 items
+- [ ] The user must be identify by a JWT
