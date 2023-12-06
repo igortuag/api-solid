@@ -13,11 +13,16 @@ GymPass style app.
 - [ ] It should be possible to search gyms by the name
 - [ ] It should be possible to do a check-in in a gym
 - [ ] It should be possible to validate the user check-in by the user
-- [ ] It should be possible register a gym
+- [ ] It should be possible to register gym
 
 ## BR (Business Rules)
 
--
+- [ ] It shouldn't to possible to register duplicated email
+- [ ] It shouldn't to possible to do two check-ins same day
+- [ ] It shouldn't to possible to do a check-in if the user is not close (100m)
+- [ ] It shouldn't to possible to validate the check-in after 20 minutes
+- [ ] It shouldn't to possible to validate a check-in if the user is not an admin
+- [ ] It shouldn't to possible to register a gym if the user is not an admin
 
 ## NR (Nonfunctional Requirements)
 
