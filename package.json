@@ -1,0 +1,29 @@
+{
+  "name": "api-solid",
+  "version": "1.0.0",
+  "description": "GymPass style app.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "node build/server.js",
+    "build": "tsup src --out-dir build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igortuag/api-solid.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/igortuag/api-solid/issues"
+  },
+  "homepage": "https://github.com/igortuag/api-solid#readme",
+  "devDependencies": {
+    "@types/node": "^20.10.4",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "fastify": "^4.24.3"
+  }
+}
