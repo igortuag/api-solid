@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/igortuag/api-solid/issues"
   },
-  "homepage": "https://github.com/igortuag/api-solid#readme"
+  "homepage": "https://github.com/igortuag/api-solid#readme",
+  "devDependencies": {
+    "@types/node": "^20.10.4",
+    "typescript": "^5.3.3"
+  }
 }
