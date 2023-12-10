@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/igortuag/api-solid#readme",
   "devDependencies": {
+    "@rocketseat/eslint-config": "2.1.0",
     "@types/node": "^20.10.4",
+    "eslint": "8.55.0",
     "typescript": "^5.3.3"
   },
   "dependencies": {
