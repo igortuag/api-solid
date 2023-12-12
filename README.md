@@ -30,3 +30,9 @@ GymPass style app.
 - [ ] The date must be persisted in a PostgreSQL database
 - [ ] All the list must be paginated by 20 items
 - [ ] The user must be identify by a JWT
+
+## ORM - Object Relational Mapper
+
+Object Relational Mapping (ORM) is a technique used in creating a "bridge" between object-oriented programs and, in most cases, relational databases.
+
+This project will use the [Prisma ORM](https://github.com/prisma)
