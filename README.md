@@ -1,38 +1,36 @@
-# App
+# GymPass App
 
-GymPass style app.
+This project serves as an exemplary application demonstrating the implementation of SOLID principles.
 
-## FR (Functional Requirements)
+## Functional Requirements (FR)
 
-- [ ] It should be possible to register;
-- [ ] It should be possible to authenticate;
-- [ ] It should be possible to get a profile of a logged user;
-- [ ] It should be possible to get the number of check-ins by the logged user;
-- [ ] It should be possible to get the history of check-ins made by the logged user;
-- [ ] It should be possible to see the closest gyms
-- [ ] It should be possible to search gyms by the name
-- [ ] It should be possible to do a check-in in a gym
-- [ ] It should be possible to validate the user check-in by the user
-- [ ] It should be possible to register gym
+- [ ] **Registration**: Users should be able to register.
+- [ ] **Authentication**: Users should be able to authenticate.
+- [ ] **User Profile**: Retrieve the profile of a logged-in user.
+- [ ] **Check-in Count**: Get the number of check-ins by the logged-in user.
+- [ ] **Check-in History**: Retrieve the history of check-ins made by the logged-in user.
+- [ ] **Find Closest Gyms**: View the closest gyms.
+- [ ] **Search Gyms by Name**: Search for gyms by name.
+- [ ] **Check-in at a Gym**: Perform a check-in at a gym.
+- [ ] **User-Validated Check-in**: Validate a user's check-in.
+- [ ] **Gym Registration**: Register a gym.
 
-## BR (Business Rules)
+## Business Rules (BR)
 
-- [ ] It shouldn't to possible to register duplicated email
-- [ ] It shouldn't to possible to do two check-ins same day
-- [ ] It shouldn't to possible to do a check-in if the user is not close (100m)
-- [ ] It shouldn't to possible to validate the check-in after 20 minutes
-- [ ] It shouldn't to possible to validate a check-in if the user is not an admin
-- [ ] It shouldn't to possible to register a gym if the user is not an admin
+- [ ] **Unique Email**: Prevent the registration of duplicate emails.
+- [ ] **Daily Check-in Limit**: Restrict users from making two check-ins on the same day.
+- [ ] **Proximity Check**: Ensure users can only check in if they are within 100 meters of the gym.
+- [ ] **Timely Validation**: Allow validation of check-ins only within 20 minutes.
+- [ ] **Admin Validation**: Allow check-in validation only by administrators.
+- [ ] **Admin-only Gym Registration**: Restrict gym registration to administrators.
 
-## NR (Nonfunctional Requirements)
+## Nonfunctional Requirements (NR)
 
-- [ ] The user password must be cryptographic
-- [ ] The date must be persisted in a PostgreSQL database
-- [ ] All the list must be paginated by 20 items
-- [ ] The user must be identify by a JWT
+- [ ] **Cryptographic Passwords**: Implement cryptographic password storage for user security.
+- [ ] **Database Persistence**: Persist data in a PostgreSQL database.
+- [ ] **Pagination**: Paginate all lists with a limit of 20 items.
+- [ ] **JWT Identification**: Identify users using JSON Web Tokens (JWT).
 
-## ORM - Object Relational Mapper
+## Object-Relational Mapper (ORM)
 
-Object Relational Mapping (ORM) is a technique used in creating a "bridge" between object-oriented programs and, in most cases, relational databases.
-
-This project will use the [Prisma ORM](https://github.com/prisma)
+This project utilizes the [Prisma ORM](https://github.com/prisma) for efficient mapping between object-oriented programming and PostgreSQL databases.
