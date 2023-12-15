@@ -34,3 +34,6 @@ This project serves as an exemplary application demonstrating the implementation
 ## Object-Relational Mapper (ORM)
 
 This project utilizes the [Prisma ORM](https://github.com/prisma) for efficient mapping between object-oriented programming and PostgreSQL databases.
+
+## Docker
+This project utilizes docker for the database. [Docker](https://www.docker.com/) is a platform designed to help developers build, share, and run container applications.
