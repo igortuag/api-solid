@@ -36,4 +36,7 @@ This project serves as an exemplary application demonstrating the implementation
 This project utilizes the [Prisma ORM](https://github.com/prisma) for efficient mapping between object-oriented programming and PostgreSQL databases.
 
 ## Docker
+
 This project utilizes docker for the database. [Docker](https://www.docker.com/) is a platform designed to help developers build, share, and run container applications.
+
+To run this project docker must be install, please see the [doc](https://docs.docker.com/get-docker/).
