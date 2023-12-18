@@ -62,3 +62,15 @@ docker start api-solid-pg
 ```
 docker rm api-solid-pg
 ```
+
+#### List running container
+```
+docker ps
+```
+
+## Run migrations
+After make sure that the docker is running you can run the migration with the follow command:
+
+```
+npx prisma migrate dev
+```
