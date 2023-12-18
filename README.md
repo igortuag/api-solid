@@ -69,8 +69,15 @@ docker ps
 ```
 
 ## Run migrations
-After make sure that the docker is running you can run the migration with the follow command:
+Once you've made sure docker is running, you can run the migration with the following command:
 
 ```
 npx prisma migrate dev
+```
+
+## Prisma Studio
+To check if it works, open Prisma Studio
+
+```
+npx prisma studio
 ```
