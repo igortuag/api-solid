@@ -43,14 +43,22 @@ To run this project docker must be install, please see the [doc](https://docs.do
 
 ### How to run docker
 
-#### First
+#### Create Container
 ```
 docker run --name api-solid-pg -e POSTGRESQL_USERNAME=docker -e POSTGRESQL_PASSWORD=docker -e POSTGRESQL_DATABASE=apisolid -p 5432:5432 bitnami/postgresql
 ```
 
-#### After
+#### List containers
 ```
 docker ps -a
+```
 
+#### Start container
+```
 docker start api-solid-pg
+```
+
+#### Delete container (do it just when necessary)
+```
+docker rm api-solid-pg
 ```
