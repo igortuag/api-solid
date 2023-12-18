@@ -36,4 +36,48 @@ This project serves as an exemplary application demonstrating the implementation
 This project utilizes the [Prisma ORM](https://github.com/prisma) for efficient mapping between object-oriented programming and PostgreSQL databases.
 
 ## Docker
+
 This project utilizes docker for the database. [Docker](https://www.docker.com/) is a platform designed to help developers build, share, and run container applications.
+
+To run this project docker must be install, please see the [doc](https://docs.docker.com/get-docker/).
+
+### How to run docker
+
+#### Create Container
+```
+docker run --name api-solid-pg -e POSTGRESQL_USERNAME=docker -e POSTGRESQL_PASSWORD=docker -e POSTGRESQL_DATABASE=apisolid -p 5432:5432 bitnami/postgresql
+```
+
+#### List containers
+```
+docker ps -a
+```
+
+#### Start container
+```
+docker start api-solid-pg
+```
+
+#### Delete container (do it just when necessary)
+```
+docker rm api-solid-pg
+```
+
+#### List running container
+```
+docker ps
+```
+
+## Run migrations
+Once you've made sure docker is running, you can run the migration with the following command:
+
+```
+npx prisma migrate dev
+```
+
+## Prisma Studio
+To check if it works, open Prisma Studio
+
+```
+npx prisma studio
+```
