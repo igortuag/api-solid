@@ -68,6 +68,15 @@ docker rm api-solid-pg
 docker ps
 ```
 
+### Or just use the docker compose and run the command
+```
+# to start
+docker compose up -d
+
+# to stop
+docker compose stop
+```
+
 ## Run migrations
 Once you've made sure docker is running, you can run the migration with the following command:
 
