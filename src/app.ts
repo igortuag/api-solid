@@ -12,4 +12,6 @@ app.post('/users', (request, reply) => {
     email: z.string().email(),
     password: z.string().min(6),
   })
+
+  const { name, email, password } = registerBodySchema.parse(request.body)
 })
