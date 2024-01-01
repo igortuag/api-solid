@@ -17,6 +17,8 @@ app.setErrorHandler((error, request, reply) => {
 
   if (env.NODE_ENV !== 'production') {
     console.error(error)
+  } else {
+    // TODO: send error to sentry or other error tracker
   }
 
   return reply.status(500).send({
