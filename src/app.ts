@@ -1,6 +1,7 @@
 import fastify from 'fastify'
 import { appRoutes } from './http/routes'
 import { ZodError } from 'zod'
+import { env } from 'process'
 
 export const app = fastify()
 
@@ -12,6 +13,10 @@ app.setErrorHandler((error, request, reply) => {
       message: 'Validation error',
       errors: error.format(),
     })
+  }
+
+  if (env.NODE_ENV !== 'production') {
+    console.error(error)
   }
 
   return reply.status(500).send({
