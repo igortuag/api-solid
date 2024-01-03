@@ -13,6 +13,6 @@ describe('Register Use Case', () => {
       password: '123456',
     })
 
-    expect(user.password).not.toBe('123456')
+    expect(user.password_hash).not.toBe('123456')
   })
 })
