@@ -1,6 +1,5 @@
 import { expect, describe, it } from 'vitest'
 import { RegisterUseCase } from './register'
-import { PrismaUsersRepository } from '@/repositories/prisma/prisma-users-repository'
 import { compare } from 'bcryptjs'
 
 describe('Register Use Case', () => {
