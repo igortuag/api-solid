@@ -16,6 +16,12 @@ export class AuthenticateUseCase {
     email,
     password,
   }: AuthenticateUseCaseRequest): Promise<AuthenticateUseCaseResponse> {
-    // auth process
+    const user = await this.userRepository.findByEmail(email)
+
+    if (!user) throw new Error('User not found')
+
+    return {
+      token: '',
+    }
   }
 }
