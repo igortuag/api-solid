@@ -4,7 +4,7 @@ This project serves as an exemplary application demonstrating the implementation
 
 ## Functional Requirements (FR)
 
-- [ ] **Registration**: Users should be able to register.
+- [x] **Registration**: Users should be able to register.
 - [ ] **Authentication**: Users should be able to authenticate.
 - [ ] **User Profile**: Retrieve the profile of a logged-in user.
 - [ ] **Check-in Count**: Get the number of check-ins by the logged-in user.
@@ -17,7 +17,7 @@ This project serves as an exemplary application demonstrating the implementation
 
 ## Business Rules (BR)
 
-- [ ] **Unique Email**: Prevent the registration of duplicate emails.
+- [x] **Unique Email**: Prevent the registration of duplicate emails.
 - [ ] **Daily Check-in Limit**: Restrict users from making two check-ins on the same day.
 - [ ] **Proximity Check**: Ensure users can only check in if they are within 100 meters of the gym.
 - [ ] **Timely Validation**: Allow validation of check-ins only within 20 minutes.
@@ -26,8 +26,8 @@ This project serves as an exemplary application demonstrating the implementation
 
 ## Nonfunctional Requirements (NR)
 
-- [ ] **Cryptographic Passwords**: Implement cryptographic password storage for user security.
-- [ ] **Database Persistence**: Persist data in a PostgreSQL database.
+- [x] **Cryptographic Passwords**: Implement cryptographic password storage for user security.
+- [x] **Database Persistence**: Persist data in a PostgreSQL database.
 - [ ] **Pagination**: Paginate all lists with a limit of 20 items.
 - [ ] **JWT Identification**: Identify users using JSON Web Tokens (JWT).
 
