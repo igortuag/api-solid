@@ -4,12 +4,11 @@ import { compare } from 'bcryptjs'
 import { InMemoryRepository } from '@/repositories/in-memory/in-memory-user-repository'
 import { UserAlreadyExistError } from './errors/user-already-exist-error'
 
+const userRepository = new InMemoryRepository()
+const registerUseCase = new RegisterUseCase(userRepository)
+
 describe('Register Use Case', () => {
   it('should be able to register', async () => {
-    const userRepository = new InMemoryRepository()
-
-    const registerUseCase = new RegisterUseCase(userRepository)
-
     const { user } = await registerUseCase.execute({
       name: 'John Doe',
       email: 'johndoe@example.com',
@@ -20,10 +19,6 @@ describe('Register Use Case', () => {
   })
 
   it('should hash user password upon registration', async () => {
-    const userRepository = new InMemoryRepository()
-
-    const registerUseCase = new RegisterUseCase(userRepository)
-
     const { user } = await registerUseCase.execute({
       name: 'John Doe',
       email: 'johndoe@example.com',
@@ -39,10 +34,6 @@ describe('Register Use Case', () => {
   })
 
   it('should not allow registration of users with same email', async () => {
-    const userRepository = new InMemoryRepository()
-
-    const registerUseCase = new RegisterUseCase(userRepository)
-
     const email = 'johndoe@example.com'
 
     await registerUseCase.execute({
