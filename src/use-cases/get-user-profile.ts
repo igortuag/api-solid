@@ -2,20 +2,20 @@ import { UsersRepository } from '@/repositories/user-repository'
 import { User } from '@prisma/client'
 import { ResourceNotFound } from './errors/resource-not-found-error'
 
-interface GetUserProfileCaseRequest {
+interface GetUserProfileUseCaseRequest {
   userId: string
 }
 
-interface GetUserProfileCaseResponse {
+interface GetUserProfileUseCaseResponse {
   user: User
 }
 
-export class GetUserProfileCase {
+export class GetUserProfileUseCase {
   constructor(private readonly userRepository: UsersRepository) {}
 
   async execute({
     userId,
-  }: GetUserProfileCaseRequest): Promise<GetUserProfileCaseResponse> {
+  }: GetUserProfileUseCaseRequest): Promise<GetUserProfileUseCaseResponse> {
     const user = await this.userRepository.findById(userId)
 
     if (!user) throw new ResourceNotFound()
