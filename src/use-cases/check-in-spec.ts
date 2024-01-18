@@ -1,6 +1,4 @@
 import { expect, describe, it, beforeEach } from 'vitest'
-import { AuthenticateUseCase } from './authenticate'
-import { hash } from 'bcryptjs'
 import { InMemoryCheckInsRepository } from '@/repositories/in-memory/in-memory-check-ins-repository'
 import { CheckInUseCase } from './check-in'
 
@@ -19,6 +17,6 @@ describe('Authenticate Use Case', () => {
       userId: 'any_user_id',
     })
 
-    expect(checkIn.id).toEqual(expect.any(String))
+    await expect(checkIn.id).toEqual(expect.any(String))
   })
 })

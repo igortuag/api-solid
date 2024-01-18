@@ -17,7 +17,7 @@ describe('Authenticate Use Case', () => {
     await userRepository.create({
       name: 'John Doe',
       email: '123456',
-      password_hash: hash('123456', 6),
+      password_hash: await hash('123456', 6),
     })
 
     const { user } = await sut.execute({
@@ -25,11 +25,11 @@ describe('Authenticate Use Case', () => {
       password: '123456',
     })
 
-    expect(user.id).toEqual(expect.any(String))
+    await expect(user.id).toEqual(expect.any(String))
   })
 
   it('should not be able to authenticate with non existing user', async () => {
-    expect(() =>
+    await expect(() =>
       sut.execute({
         email: 'johndoe@example.com',
         password: '123456',
@@ -41,15 +41,15 @@ describe('Authenticate Use Case', () => {
     await userRepository.create({
       name: 'John Doe',
       email: '123456',
-      password_hash: hash('123456', 6),
+      password_hash: await hash('123456', 6),
     })
 
-    const { user } = await sut.execute({
+    await sut.execute({
       email: 'johndoe@example.com',
       password: '123123',
     })
 
-    expect(() =>
+    await expect(() =>
       sut.execute({
         email: 'johndoe@example.com',
         password: '123456',
