@@ -11,7 +11,7 @@ This project serves as an exemplary application demonstrating the implementation
 - [ ] **Check-in History**: Retrieve the history of check-ins made by the logged-in user.
 - [ ] **Find Closest Gyms**: View the closest gyms.
 - [ ] **Search Gyms by Name**: Search for gyms by name.
-- [ ] **Check-in at a Gym**: Perform a check-in at a gym.
+- [x] **Check-in at a Gym**: Perform a check-in at a gym.
 - [ ] **User-Validated Check-in**: Validate a user's check-in.
 - [ ] **Gym Registration**: Register a gym.
 
