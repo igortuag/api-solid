@@ -19,4 +19,18 @@ describe('Authenticate Use Case', () => {
 
     await expect(checkIn.id).toEqual(expect.any(String))
   })
+
+  it('should not be able to check in twice in the same day', async () => {
+    await sut.execute({
+      gymId: 'any_gym_id',
+      userId: 'any_user_id',
+    })
+
+    await expect(() =>
+      sut.execute({
+        gymId: 'any_gym_id',
+        userId: 'any_user_id',
+      }),
+    ).rejects.toBeInstanceOf(Error)
+  })
 })
