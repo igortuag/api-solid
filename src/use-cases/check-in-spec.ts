@@ -1,4 +1,4 @@
-import { expect, describe, it, beforeEach } from 'vitest'
+import { expect, describe, it, beforeEach, vi, afterEach } from 'vitest'
 import { InMemoryCheckInsRepository } from '@/repositories/in-memory/in-memory-check-ins-repository'
 import { CheckInUseCase } from './check-in'
 
@@ -9,6 +9,10 @@ describe('Authenticate Use Case', () => {
   beforeEach(() => {
     checkInRepository = new InMemoryCheckInsRepository()
     sut = new CheckInUseCase(checkInRepository)
+  })
+
+  afterEach(() => {
+    vi.useRealTimers()
   })
 
   it('should be able to check in', async () => {
