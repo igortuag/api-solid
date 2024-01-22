@@ -9,6 +9,8 @@ describe('Authenticate Use Case', () => {
   beforeEach(() => {
     checkInRepository = new InMemoryCheckInsRepository()
     sut = new CheckInUseCase(checkInRepository)
+
+    vi.useFakeTimers()
   })
 
   afterEach(() => {
