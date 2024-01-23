@@ -54,11 +54,11 @@ describe('Authenticate Use Case', () => {
 
     vi.setSystemTime(new Date('2024-01-02 10:00:00'))
 
-    await expect(() =>
-      sut.execute({
-        gymId: 'any_gym_id',
-        userId: 'any_user_id',
-      }),
-    ).resolves.toBeTruthy()
+    const { checkIn } = await sut.execute({
+      gymId: 'any_gym_id',
+      userId: 'any_user_id',
+    })
+
+    await expect(checkIn.id).toEqual(expect.any(String))
   })
 })
