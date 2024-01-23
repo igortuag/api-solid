@@ -18,6 +18,8 @@ describe('Authenticate Use Case', () => {
   })
 
   it('should be able to check in', async () => {
+    vi.setSystemTime(new Date('2024-01-01 10:00:00'))
+
     const { checkIn } = await sut.execute({
       gymId: 'any_gym_id',
       userId: 'any_user_id',
@@ -27,6 +29,8 @@ describe('Authenticate Use Case', () => {
   })
 
   it('should not be able to check in twice in the same day', async () => {
+    vi.setSystemTime(new Date('2024-01-01 10:00:00'))
+
     await sut.execute({
       gymId: 'any_gym_id',
       userId: 'any_user_id',
@@ -38,5 +42,23 @@ describe('Authenticate Use Case', () => {
         userId: 'any_user_id',
       }),
     ).rejects.toBeInstanceOf(Error)
+  })
+
+  it('should be able to check in twice in different days', async () => {
+    vi.setSystemTime(new Date('2024-01-01 10:00:00'))
+
+    await sut.execute({
+      gymId: 'any_gym_id',
+      userId: 'any_user_id',
+    })
+
+    vi.setSystemTime(new Date('2024-01-02 10:00:00'))
+
+    const { checkIn } = await sut.execute({
+      gymId: 'any_gym_id',
+      userId: 'any_user_id',
+    })
+
+    await expect(checkIn.id).toEqual(expect.any(String))
   })
 })
