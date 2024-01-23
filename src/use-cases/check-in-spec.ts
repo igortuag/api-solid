@@ -43,4 +43,22 @@ describe('Authenticate Use Case', () => {
       }),
     ).rejects.toBeInstanceOf(Error)
   })
+
+  it('should be able to check in twice in different days', async () => {
+    vi.setSystemTime(new Date('2024-01-01 10:00:00'))
+
+    await sut.execute({
+      gymId: 'any_gym_id',
+      userId: 'any_user_id',
+    })
+
+    vi.setSystemTime(new Date('2024-01-02 10:00:00'))
+
+    await expect(() =>
+      sut.execute({
+        gymId: 'any_gym_id',
+        userId: 'any_user_id',
+      }),
+    ).resolves.toBeTruthy()
+  })
 })
