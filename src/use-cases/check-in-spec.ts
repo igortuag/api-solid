@@ -29,6 +29,8 @@ describe('Authenticate Use Case', () => {
   })
 
   it('should not be able to check in twice in the same day', async () => {
+    vi.setSystemTime(new Date('2024-01-01 10:00:00'))
+
     await sut.execute({
       gymId: 'any_gym_id',
       userId: 'any_user_id',
