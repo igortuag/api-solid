@@ -1,14 +1,16 @@
 import { expect, describe, it, beforeEach, vi, afterEach } from 'vitest'
 import { InMemoryCheckInsRepository } from '@/repositories/in-memory/in-memory-check-ins-repository'
 import { CheckInUseCase } from './check-in'
+import { InMemoryGymRepository } from '@/repositories/in-memory/in-memory-gym-repository'
 
 let checkInRepository: InMemoryCheckInsRepository
+let gymsRepository: InMemoryGymRepository
 let sut: CheckInUseCase
 
 describe('Authenticate Use Case', () => {
   beforeEach(() => {
     checkInRepository = new InMemoryCheckInsRepository()
-    sut = new CheckInUseCase(checkInRepository)
+    sut = new CheckInUseCase(checkInRepository, gymsRepository)
 
     vi.useFakeTimers()
   })
