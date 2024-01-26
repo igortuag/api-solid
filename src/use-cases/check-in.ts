@@ -30,6 +30,9 @@ export class CheckInUseCase {
       throw new ResourceNotFound()
     }
 
+    // calculate distance between user and gym
+    // if distance is greater than 100m, throw error
+
     const checkInOnSameDate = await this.checkInsRepository.findByUserIdOnDate(
       userId,
       new Date(),
