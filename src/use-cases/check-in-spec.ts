@@ -13,14 +13,6 @@ describe('Authenticate Use Case', () => {
     checkInRepository = new InMemoryCheckInsRepository()
     sut = new CheckInUseCase(checkInRepository, gymsRepository)
 
-    vi.useFakeTimers()
-  })
-
-  afterEach(() => {
-    vi.useRealTimers()
-  })
-
-  it('should be able to check in', async () => {
     gymsRepository.items.push({
       id: 'any_gym_id',
       title: 'any_name',
@@ -30,6 +22,14 @@ describe('Authenticate Use Case', () => {
       longitude: new Decimal(0),
     })
 
+    vi.useFakeTimers()
+  })
+
+  afterEach(() => {
+    vi.useRealTimers()
+  })
+
+  it('should be able to check in', async () => {
     vi.setSystemTime(new Date('2024-01-01 10:00:00'))
 
     const { checkIn } = await sut.execute({
