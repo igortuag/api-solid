@@ -2,6 +2,7 @@ import { expect, describe, it, beforeEach, vi, afterEach } from 'vitest'
 import { InMemoryCheckInsRepository } from '@/repositories/in-memory/in-memory-check-ins-repository'
 import { CheckInUseCase } from './check-in'
 import { InMemoryGymRepository } from '@/repositories/in-memory/in-memory-gym-repository'
+import { Decimal } from '@prisma/client/runtime/library'
 
 let checkInRepository: InMemoryCheckInsRepository
 let gymsRepository: InMemoryGymRepository
@@ -20,6 +21,15 @@ describe('Authenticate Use Case', () => {
   })
 
   it('should be able to check in', async () => {
+    gymsRepository.items.push({
+      id: 'any_gym_id',
+      title: 'any_name',
+      phone: 'any_phone',
+      description: 'any_description',
+      latitude: new Decimal(0),
+      longitude: new Decimal(0),
+    })
+
     vi.setSystemTime(new Date('2024-01-01 10:00:00'))
 
     const { checkIn } = await sut.execute({
