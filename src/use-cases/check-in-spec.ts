@@ -25,6 +25,8 @@ describe('Authenticate Use Case', () => {
     const { checkIn } = await sut.execute({
       gymId: 'any_gym_id',
       userId: 'any_user_id',
+      userLatitude: 0,
+      userLongitude: 0,
     })
 
     await expect(checkIn.id).toEqual(expect.any(String))
@@ -52,6 +54,8 @@ describe('Authenticate Use Case', () => {
     await sut.execute({
       gymId: 'any_gym_id',
       userId: 'any_user_id',
+      userLatitude: 0,
+      userLongitude: 0,
     })
 
     vi.setSystemTime(new Date('2024-01-02 10:00:00'))
@@ -59,6 +63,8 @@ describe('Authenticate Use Case', () => {
     const { checkIn } = await sut.execute({
       gymId: 'any_gym_id',
       userId: 'any_user_id',
+      userLatitude: 0,
+      userLongitude: 0,
     })
 
     await expect(checkIn.id).toEqual(expect.any(String))
