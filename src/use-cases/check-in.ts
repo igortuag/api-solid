@@ -44,7 +44,9 @@ export class CheckInUseCase {
       },
     )
 
-    if (distance > 0.1) {
+    const MAX_DISTANCE = 0.1
+
+    if (distance > MAX_DISTANCE) {
       throw new Error('User is too far from the gym')
     }
 
