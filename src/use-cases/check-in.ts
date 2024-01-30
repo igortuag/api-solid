@@ -44,6 +44,10 @@ export class CheckInUseCase {
       },
     )
 
+    if (distance > 0.1) {
+      throw new Error('User is too far from the gym')
+    }
+
     const checkInOnSameDate = await this.checkInsRepository.findByUserIdOnDate(
       userId,
       new Date(),
