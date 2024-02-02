@@ -9,11 +9,11 @@ let gymsRepository: InMemoryGymRepository
 let sut: CheckInUseCase
 
 describe('Authenticate Use Case', () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     checkInRepository = new InMemoryCheckInsRepository()
     sut = new CheckInUseCase(checkInRepository, gymsRepository)
 
-    gymsRepository.items.push({
+    await gymsRepository.create({
       id: 'any_gym_id',
       title: 'any_name',
       phone: 'any_phone',
