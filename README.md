@@ -13,7 +13,7 @@ This project serves as an exemplary application demonstrating the implementation
 - [ ] **Search Gyms by Name**: Search for gyms by name.
 - [x] **Check-in at a Gym**: Perform a check-in at a gym.
 - [ ] **User-Validated Check-in**: Validate a user's check-in.
-- [ ] **Gym Registration**: Register a gym.
+- [x] **Gym Registration**: Register a gym.
 
 ## Business Rules (BR)
 
