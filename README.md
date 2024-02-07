@@ -1,4 +1,4 @@
-# GymPass API
+# GymPass API˜
 
 This project serves as an exemplary application demonstrating the implementation of SOLID principles.
 
