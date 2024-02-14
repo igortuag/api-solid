@@ -8,7 +8,7 @@ This project serves as an exemplary application demonstrating the implementation
 - [x] **Authentication**: Users should be able to authenticate.
 - [x] **User Profile**: Retrieve the profile of a logged-in user.
 - [ ] **Check-in Count**: Get the number of check-ins by the logged-in user.
-- [ ] **Check-in History**: Retrieve the history of check-ins made by the logged-in user.
+- [x] **Check-in History**: Retrieve the history of check-ins made by the logged-in user.
 - [ ] **Find Closest Gyms**: View the closest gyms.
 - [ ] **Search Gyms by Name**: Search for gyms by name.
 - [x] **Check-in at a Gym**: Perform a check-in at a gym.
