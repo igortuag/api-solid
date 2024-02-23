@@ -9,10 +9,10 @@ This project serves as an exemplary application demonstrating the implementation
 - [x] **User Profile**: Retrieve the profile of a logged-in user.
 - [x] **Check-in Count**: Get the number of check-ins by the logged-in user.
 - [x] **Check-in History**: Retrieve the history of check-ins made by the logged-in user.
-- [ ] **Find Closest Gyms**: View the closest gyms.
+- [ ] **Find Closest Gyms**: View the closest gyms (max 10km).
 - [x] **Search Gyms by Name**: Search for gyms by name.
 - [x] **Check-in at a Gym**: Perform a check-in at a gym.
-- [x] **User-Validated Check-in**: Validate a user's check-in.
+- [ ] **User-Validated Check-in**: Validate a user's check-in.
 - [x] **Gym Registration**: Register a gym.
 
 ## Business Rules (BR)
