@@ -22,6 +22,8 @@ export class ValidateCheckInUseCase {
       throw new ResourceNotFound()
     }
 
+    checkIn.validation_at = new Date()
+
     return { checkIn }
   }
 }
