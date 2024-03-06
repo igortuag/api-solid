@@ -5,6 +5,7 @@ import { Decimal } from "@prisma/client/runtime/library";
 import { MaxNumberOfCheckInsError } from "./errors/max-number-of-check-ins-error";
 import { MaxDistanceError } from "./errors/max-distance-error";
 import { ValidateCheckInUseCase } from "./validate-check-in";
+import { ResourceNotFound } from "./errors/resource-not-found-error";
 
 let checkInRepository: InMemoryCheckInsRepository;
 let sut: ValidateCheckInUseCase;
@@ -33,5 +34,13 @@ describe("Validate Check-in Use Case", () => {
 
     expect(checkIn.validation_at).toEqual(expect.any(Date));
     expect(checkInRepository.items[0].validation_at).toEqual(expect.any(Date));
+  });
+
+  it("should not be able to validate an inexistent check-in", async () => {
+    expect(
+      await sut.execute({
+        CheckInId: "inexistent_check_in_id"
+      })
+    ).rejects.toBeInstanceOf(ResourceNotFound);
   });
 });
