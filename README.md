@@ -12,7 +12,7 @@ This project serves as an exemplary application demonstrating the implementation
 - [x] **Find Closest Gyms**: View the closest gyms (max 10km).
 - [x] **Search Gyms by Name**: Search for gyms by name.
 - [x] **Check-in at a Gym**: Perform a check-in at a gym.
-- [ ] **User-Validated Check-in**: Validate a user's check-in.
+- [x] **User-Validated Check-in**: Validate a user's check-in.
 - [x] **Gym Registration**: Register a gym.
 
 ## Business Rules (BR)
