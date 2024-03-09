@@ -1,6 +1,7 @@
 import { CheckIn } from "@prisma/client";
 import { CheckInsRepository } from "@/repositories/check-ins-repository";
 import { ResourceNotFound } from "./errors/resource-not-found-error";
+import dayjs from "dayjs";
 
 interface ValidateCheckInUseCaseRequest {
   CheckInId: string;
@@ -14,18 +15,27 @@ export class ValidateCheckInUseCase {
   constructor(private checkInsRepository: CheckInsRepository) {}
 
   async execute({
-    CheckInId,
+    CheckInId
   }: ValidateCheckInUseCaseRequest): Promise<ValidateCheckInUseCaseResponse> {
-    const checkIn = await this.checkInsRepository.findById(CheckInId)
+    const checkIn = await this.checkInsRepository.findById(CheckInId);
 
     if (!checkIn) {
-      throw new ResourceNotFound()
+      throw new ResourceNotFound();
     }
 
-    checkIn.validation_at = new Date()
+    const distanceInMinutesFromCheckInCreation = dayjs(new Date()).diff(
+      dayjs(checkIn.created_at),
+      "minute"
+    );
 
-    await this.checkInsRepository.save(checkIn)
+    if (distanceInMinutesFromCheckInCreation > 20) {
+      throw new Error("Check-in expired");
+    }
 
-    return { checkIn }
+    checkIn.validation_at = new Date();
+
+    await this.checkInsRepository.save(checkIn);
+
+    return { checkIn };
   }
 }
