@@ -6,6 +6,7 @@ import { MaxNumberOfCheckInsError } from "./errors/max-number-of-check-ins-error
 import { MaxDistanceError } from "./errors/max-distance-error";
 import { ValidateCheckInUseCase } from "./validate-check-in";
 import { ResourceNotFound } from "./errors/resource-not-found-error";
+import { LateCheckInValidationError } from "./errors/late-check-in-validation-error";
 
 let checkInRepository: InMemoryCheckInsRepository;
 let sut: ValidateCheckInUseCase;
@@ -58,6 +59,6 @@ describe("Validate Check-in Use Case", () => {
       await sut.execute({
         CheckInId: createdCheckIn.id
       })
-    ).rejects.toBeInstanceOf(Error);
+    ).rejects.toBeInstanceOf(LateCheckInValidationError);
   });
 });
