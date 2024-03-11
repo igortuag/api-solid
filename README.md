@@ -19,8 +19,8 @@ This project serves as an exemplary application demonstrating the implementation
 
 - [x] **Unique Email**: Prevent the registration of duplicate emails.
 - [ ] **Daily Check-in Limit**: Restrict users from making two check-ins on the same day.
-- [ ] **Proximity Check**: Ensure users can only check in if they are within 100 meters of the gym.
-- [ ] **Timely Validation**: Allow validation of check-ins only within 20 minutes.
+- [x] **Proximity Check**: Ensure users can only check in if they are within 100 meters of the gym.
+- [x] **Timely Validation**: Allow validation of check-ins only within 20 minutes.
 - [ ] **Admin Validation**: Allow check-in validation only by administrators.
 - [ ] **Admin-only Gym Registration**: Restrict gym registration to administrators.
 
