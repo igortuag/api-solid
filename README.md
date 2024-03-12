@@ -18,7 +18,7 @@ This project serves as an exemplary application demonstrating the implementation
 ## Business Rules (BR)
 
 - [x] **Unique Email**: Prevent the registration of duplicate emails.
-- [ ] **Daily Check-in Limit**: Restrict users from making two check-ins on the same day.
+- [x] **Daily Check-in Limit**: Restrict users from making two check-ins on the same day.
 - [x] **Proximity Check**: Ensure users can only check in if they are within 100 meters of the gym.
 - [x] **Timely Validation**: Allow validation of check-ins only within 20 minutes.
 - [ ] **Admin Validation**: Allow check-in validation only by administrators.
@@ -28,7 +28,7 @@ This project serves as an exemplary application demonstrating the implementation
 
 - [x] **Cryptographic Passwords**: Implement cryptographic password storage for user security.
 - [x] **Database Persistence**: Persist data in a PostgreSQL database.
-- [ ] **Pagination**: Paginate all lists with a limit of 20 items.
+- [x] **Pagination**: Paginate all lists with a limit of 20 items.
 - [ ] **JWT Identification**: Identify users using JSON Web Tokens (JWT).
 
 ## Object-Relational Mapper (ORM)
