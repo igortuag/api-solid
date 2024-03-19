@@ -49,6 +49,13 @@ export class PrismaCheckInsRepository implements CheckInsRepository {
   }
 
   findByUserIdOnDate(userId: string, date: Date) {
-    throw new Error('Method not implemented.')
+    const checkIn = prisma.checkIn.findFirst({
+      where: {
+        user_id: userId,
+        created_at: date,
+      },
+    })
+
+    return checkIn
   }
 }
