@@ -45,7 +45,11 @@ export class PrismaCheckInsRepository implements CheckInsRepository {
   }
 
   countByUserId(userId: string): Promise<number> {
-    throw new Error('Method not implemented.')
+    const checkInsCount = prisma.checkIn.count({
+      where: { user_id: userId },
+    })
+
+    return checkInsCount
   }
 
   findByUserIdOnDate(userId: string, date: Date) {
