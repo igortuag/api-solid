@@ -1,42 +1,42 @@
-import { CheckIn } from "@prisma/client";
-import { CheckInsRepository } from "@/repositories/check-ins-repository";
-import { ResourceNotFound } from "./errors/resource-not-found-error";
-import dayjs from "dayjs";
-import { LateCheckInValidationError } from "./errors/late-check-in-validation-error";
+import { CheckIn } from '@prisma/client'
+import { CheckInsRepository } from '@/repositories/check-ins-repository'
+import { ResourceNotFound } from './errors/resource-not-found-error'
+import dayjs from 'dayjs'
+import { LateCheckInValidationError } from './errors/late-check-in-validation-error'
 
 interface ValidateCheckInUseCaseRequest {
-  CheckInId: string;
+  CheckInId: string
 }
 
 interface ValidateCheckInUseCaseResponse {
-  checkIn: CheckIn;
+  checkIn: CheckIn
 }
 
 export class ValidateCheckInUseCase {
   constructor(private checkInsRepository: CheckInsRepository) {}
 
   async execute({
-    CheckInId
+    CheckInId,
   }: ValidateCheckInUseCaseRequest): Promise<ValidateCheckInUseCaseResponse> {
-    const checkIn = await this.checkInsRepository.findById(CheckInId);
+    const checkIn = await this.checkInsRepository.findById(CheckInId)
 
     if (!checkIn) {
-      throw new ResourceNotFound();
+      throw new ResourceNotFound()
     }
 
     const distanceInMinutesFromCheckInCreation = dayjs(new Date()).diff(
       dayjs(checkIn.created_at),
-      "minute"
-    );
+      'minute',
+    )
 
     if (distanceInMinutesFromCheckInCreation > 20) {
-      throw new LateCheckInValidationError();
+      throw new LateCheckInValidationError()
     }
 
-    checkIn.validation_at = new Date();
+    checkIn.validation_at = new Date()
 
-    await this.checkInsRepository.save(checkIn);
+    await this.checkInsRepository.save(checkIn)
 
-    return { checkIn };
+    return { checkIn }
   }
 }
