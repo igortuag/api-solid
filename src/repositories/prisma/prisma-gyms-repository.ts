@@ -20,7 +20,17 @@ export class PrismaGymsRepository implements GymsRepository {
   }
 
   async searchMany(query: string, page: number) {
-    throw new Error('Method not implemented.')
+    const gyms = await prisma.gym.findMany({
+      where: {
+        name: {
+          contains: query,
+        },
+      },
+      skip: page * 10,
+      take: 10,
+    })
+
+    return gyms
   }
 
   async create(data: Prisma.GymUncheckedCreateInput) {
