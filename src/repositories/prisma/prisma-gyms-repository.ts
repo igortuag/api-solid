@@ -34,6 +34,10 @@ export class PrismaGymsRepository implements GymsRepository {
   }
 
   async create(data: Prisma.GymUncheckedCreateInput) {
-    throw new Error('Method not implemented.')
+    const gym = await prisma.gym.create({
+      data,
+    })
+
+    return gym
   }
 }
