@@ -1,7 +1,7 @@
 import { prisma, Gym, Prisma } from '@prisma/client'
 import {
   GymsRepository,
-  FetchNearbyhGymUseCaseRequest,
+  FetchNearbyGymUseCaseRequest,
 } from '../gyms-repository'
 
 export class PrismaGymsRepository implements GymsRepository {
@@ -18,7 +18,7 @@ export class PrismaGymsRepository implements GymsRepository {
   async fetchNearbyGyms({
     latitude,
     longitude,
-  }: FetchNearbyhGymUseCaseRequest) {
+  }: FetchNearbyGymUseCaseRequest) {
     const gyms = await prisma.$queryRaw`
       SELECT * from gyms
       WHERE ( 6371 * acos( cos( radians(${latitude}) ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(${longitude}) ) + sin( radians(${latitude}) ) * sin( radians( latitude ) ) ) ) <= 10

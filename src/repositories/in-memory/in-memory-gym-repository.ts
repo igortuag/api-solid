@@ -1,6 +1,6 @@
 import { Gym, Prisma } from '@prisma/client'
 import {
-  FetchNearbyhGymUseCaseRequest,
+  FetchNearbyGymUseCaseRequest,
   GymsRepository,
 } from '../gyms-repository'
 import { randomUUID } from 'crypto'
@@ -14,7 +14,7 @@ export class InMemoryGymRepository implements GymsRepository {
     return gym || null
   }
 
-  async fetchNearbyGyms(params: FetchNearbyhGymUseCaseRequest) {
+  async fetchNearbyGyms(params: FetchNearbyGymUseCaseRequest) {
     return this.items.filter((gym) => {
       const distance = getDistanceBetweenCoordinates(
         {
