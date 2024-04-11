@@ -102,3 +102,5 @@ User logins, send email and password -> backend creates a token unique, non-chan
 Stateless: not storage in any data base
 
 Back-end: control the token through a key-word
+
+Key-word: asdkldnklqwndklnqwkldnqwkldnqlwdhqiowhqiouehqwnqwlasz123
