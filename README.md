@@ -104,3 +104,5 @@ Stateless: not storage in any data base
 Back-end: control the token through a key-word
 
 Key-word: asdkldnklqwndklnqwkldnqwkldnqlwdhqiowhqiouehqwnqwlasz123
+
+Emails/password -> header.payload.sign
