@@ -106,3 +106,5 @@ Back-end: control the token through a key-word
 Key-word: asdkldnklqwndklnqwkldnqwkldnqlwdhqiowhqiouehqwnqwlasz123
 
 Emails/password -> header.payload.sign
+
+The token can transit between BE and FE without lost, and could be generate only for the backend with a key word.
