@@ -4,7 +4,8 @@ import { InvalidCredentialsError } from '@/use-cases/errors/invalid-credentials-
 import { makeGetUserProfileUseCase } from '@/use-cases/factories/make-get-user-profile-use-case'
 
 export async function profile(request: FastifyRequest, reply: FastifyReply) {
-=
+  await request.jwtVerify()
+
   // const { userId } = profileBodySchema.parse(request.body)
 
   // try {
