@@ -1,12 +1,16 @@
+import { randomUUID } from 'crypto'
 import { Environment } from 'vitest'
 
 export default <Environment>{
   name: 'prisma',
   async setup() {
-    console.log('setup')
+    const schema = randomUUID()
 
     return {
-      teardown() {},
+      teardown() {
+        console.log(`Tearing down environment with schema ${schema}`)
+      },
     }
   },
+  transformMode: 'ssr',
 }
