@@ -1,3 +1,5 @@
+import 'dotenv/config'
+
 import { randomUUID } from 'crypto'
 import { Environment } from 'vitest'
 
@@ -17,6 +19,9 @@ export default <Environment>{
   name: 'prisma',
   async setup() {
     const schema = randomUUID()
+
+    console.log(`Setting up environment with schema ${schema}`)
+    console.log('url ::>', generateDatabaseUrl(schema))
 
     return {
       teardown() {
