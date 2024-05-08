@@ -19,9 +19,9 @@ export default <Environment>{
   name: 'prisma',
   async setup() {
     const schema = randomUUID()
+    const databaseURL = generateDatabaseUrl(schema)
 
-    console.log(`Setting up environment with schema ${schema}`)
-    console.log('url ::>', generateDatabaseUrl(schema))
+    process.env.DATABASE_URL = databaseURL
 
     return {
       teardown() {
