@@ -10,6 +10,9 @@ export const app = fastify()
 
 app.register(fastifyJwt, {
   secret: env.JWT_SECRET as string,
+  sign: {
+    expiresIn: '10m',
+  },
 })
 
 app.register(usersRoutes)
