@@ -1,4 +1,5 @@
 import fastify from 'fastify'
+import fastifyCookie from '@fastify/cookie'
 import { ZodError } from 'zod'
 import { env } from 'process'
 import fastifyJwt from '@fastify/jwt'
@@ -14,6 +15,8 @@ app.register(fastifyJwt, {
     expiresIn: '10m',
   },
 })
+
+app.register(fastifyCookie)
 
 app.register(usersRoutes)
 app.register(gymsRoutes)
