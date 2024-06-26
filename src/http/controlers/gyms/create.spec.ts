@@ -14,7 +14,7 @@ describe('Create (e2e)', () => {
   })
 
   it('should be able to get user create', async () => {
-    const { token } = await createAndAuthenticateUser(app)
+    const { token } = await createAndAuthenticateUser(app, true)
 
     const response = await request(app.server)
       .post('/gyms')
