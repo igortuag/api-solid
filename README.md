@@ -21,15 +21,15 @@ This project serves as an exemplary application demonstrating the implementation
 - [x] **Daily Check-in Limit**: Restrict users from making two check-ins on the same day.
 - [x] **Proximity Check**: Ensure users can only check in if they are within 100 meters of the gym.
 - [x] **Timely Validation**: Allow validation of check-ins only within 20 minutes.
-- [ ] **Admin Validation**: Allow check-in validation only by administrators.
-- [ ] **Admin-only Gym Registration**: Restrict gym registration to administrators.
+- [x] **Admin Validation**: Allow check-in validation only by administrators.
+- [x] **Admin-only Gym Registration**: Restrict gym registration to administrators.
 
 ## Nonfunctional Requirements (NR)
 
 - [x] **Cryptographic Passwords**: Implement cryptographic password storage for user security.
 - [x] **Database Persistence**: Persist data in a PostgreSQL database.
 - [x] **Pagination**: Paginate all lists with a limit of 20 items.
-- [ ] **JWT Identification**: Identify users using JSON Web Tokens (JWT).
+- [x] **JWT Identification**: Identify users using JSON Web Tokens (JWT).
 
 ## Object-Relational Mapper (ORM)
 
